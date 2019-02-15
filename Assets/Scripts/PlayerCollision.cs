@@ -16,6 +16,13 @@ public class PlayerCollision : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
            
         }
+        if (collision.collider.tag == "Cube")
+        {
+            Debug.Log("hitting " + collision.collider.name);
+            Movement.enabled = false;
+            FindObjectOfType<GameManager>().EndGame();
+
+        }
 
     }
 }

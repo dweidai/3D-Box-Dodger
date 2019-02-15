@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     public float spawnLeastWait;
     public int startWait;
     public bool stop;
+    public int prepareDis = 200;
 
     int objectSelect;
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class Spawner : MonoBehaviour
         while (stop == false)
         {
             objectSelect = Random.Range(0, 2);
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 0.2f, player.position.z + Random.Range(100, spawnValues.z*100));
+            Vector3 spawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 0.2f, player.position.z + Random.Range(prepareDis, spawnValues.z*100));
             Instantiate(obstacles[objectSelect], spawnPos + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
             yield return new WaitForSeconds(spawnWait);
         }
