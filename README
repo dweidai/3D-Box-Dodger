@@ -1,1 +1,11 @@
 This is just an endless game created by myself to feel a sense of purpose
+The red ball is the player;
+You may use keyboard W,A,S,D to control the ball movement.
+The game has automatic speed up function; however, if you want to have the
+movement even faster, you may press W
+S is to temporarily slow down the ball movement and you may also slow down
+the ball by hitting the gray cubes.
+A means move to the left and D means move to the right.
+The goal is to move as far as you can while dodging the blue obstacles.
+Falling out the trial or hitting the blue boxes will end your game and your
+score will refresh down to 0. 
