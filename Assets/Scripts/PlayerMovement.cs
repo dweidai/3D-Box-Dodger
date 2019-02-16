@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public float forwardForce = 10f;
     public float sideForce = 10f;
-    public int count = 0;
+    int count = 0;
     private void Start()
     {
         if (Input.GetKey("s"))
@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("s"))
         {
             rb.AddForce(0, 0, -forwardForce * Time.deltaTime, ForceMode.VelocityChange);
+        }
+        if (Input.GetKey("w"))
+        {
+            rb.AddForce(0, 0, +forwardForce * Time.deltaTime, ForceMode.VelocityChange);
         }
         if (Input.GetKey("d"))
         {

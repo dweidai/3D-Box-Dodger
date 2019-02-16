@@ -7,6 +7,7 @@ TagManager:
   - Reset
   - Brick
   - Obstacle
+  - Cube
   layers:
   - Default
   - TransparentFX

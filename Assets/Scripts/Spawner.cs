@@ -15,6 +15,9 @@ public class Spawner : MonoBehaviour
     public int prepareDis = 200;
 
     int objectSelect;
+    float lowerBound = 0.2f;
+    float EPSILON = 0.001f;
+   public int count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,21 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (count == 600)
+        {
+            if (System.Math.Abs(spawnLeastWait - lowerBound) > EPSILON)
+            {
+                spawnLeastWait = spawnLeastWait - 0.05f;
+            }
+            else
+            {
+                if(System.Math.Abs(spawnLeastWait - spawnMostWait) > lowerBound)
+                spawnMostWait = spawnMostWait - 0.05f;
+            }
+            count = 0;
+        }
         spawnWait = Random.Range(spawnLeastWait, spawnMostWait);
+        count++;
     }
 
     IEnumerator waitSpawner()

@@ -6,6 +6,8 @@ public class PlayerCollision : MonoBehaviour
 {
     public PlayerMovement Movement;
     public GameManager gameManager;
+    public Rigidbody rb;
+    public float forwardForce = 10f;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,9 +21,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.collider.tag == "Cube")
         {
             Debug.Log("hitting " + collision.collider.name);
-            Movement.enabled = false;
-            FindObjectOfType<GameManager>().EndGame();
-
+            rb.AddForce(0, 0, -forwardForce * Time.deltaTime, ForceMode.VelocityChange);
         }
 
     }
